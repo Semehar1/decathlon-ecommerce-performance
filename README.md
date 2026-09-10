@@ -11,7 +11,7 @@ This project was built as an end-to-end BI exercise: starting with a structured 
 
 ## Dashboard
 
-![Decathlon E-Commerce Performance Dashboard](screenshots/dashboard.png)
+![Decathlon E-Commerce Performance Dashboard](dashboard.png)
 
 ## Business Questions
 
