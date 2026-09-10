@@ -1,140 +1,323 @@
-# Decathlon E-Commerce Performance Analytics
+Decathlon E-Commerce Performance Analytics
 
-![Power BI](https://img.shields.io/badge/Power%20BI-Analytics-F2C811?logo=powerbi&logoColor=black)
-![DAX](https://img.shields.io/badge/DAX-Time%20Intelligence-blue)
-![Data Modeling](https://img.shields.io/badge/Data%20Model-Star%20Schema-0F766E)
-![Status](https://img.shields.io/badge/Status-Completed-2E7D32)
 
-An executive Power BI dashboard analyzing Decathlon e-commerce performance across sales, profitability, orders, products, geography, and sales channels.
 
-This project was built as an end-to-end BI exercise: starting with a structured sales dataset, developing a star-schema model and DAX measures, and turning the results into a concise executive dashboard.
 
-## Dashboard
 
-![Decathlon E-Commerce Performance Dashboard](dashboard.png)
 
-## Business Questions
+An executive Power BI dashboard analyzing e-commerce performance across sales, profitability, orders, products, geography, and sales channels.
 
-The dashboard is designed to answer:
+Built as a practical companion to my Microsoft PL-300 Power BI Data Analyst certification preparation, this project demonstrates an end-to-end BI workflow: structured data, star-schema modeling, DAX measures, time-intelligence analysis, KPI development, and executive dashboard storytelling.
 
-- How much revenue and profit are being generated?
-- How are sales trending over time?
-- How does current sales performance compare with last year?
-- Which product categories generate the most sales?
-- Which countries and cities contribute most to sales?
-- Which sales channels are driving revenue?
+📌 TL;DR
 
-## Executive KPI Snapshot
+The analysis shows €3.81M in Net Sales, €1.50M in Profit, and 10K Orders, with Tennis as the leading product category, Online as the dominant sales channel, and France as the strongest geographic market. Overall Sales YoY Growth is +49%.
 
-| KPI | Result |
-|---|---:|
-| Total Sales | **€3.81M** |
-| Total Profit | **€1.50M** |
-| Total Orders | **10K** |
-| YoY Growth | **49%** |
+The dashboard is designed to move from what happened → where it happened → what is driving it → where to investigate next.
 
-## Key Findings
+📊 Dashboard
 
-### Product categories
-Tennis is the strongest category at approximately **€0.57M**, followed by Fitness (**€0.55M**) and Hiking & Camping (**€0.53M**).
 
-### Sales channels
-**Online** is the dominant channel at approximately **€1.71M**, followed by Mobile App (**€0.96M**) and Click & Collect (**€0.77M**).
 
-### Geographic performance
-**France** is the largest market at approximately **€0.97M**, followed by Spain (**€0.62M**) and Germany (**€0.59M**).
+🎯 Business Questions
 
-### Trend
-The dashboard compares monthly sales with the previous year and provides a high-level view of sales momentum over time.
+The dashboard was designed to answer:
 
-## Dashboard Design
+How much revenue and profit are being generated?
 
-The final page uses four complementary analytical views:
+How are sales trending over time?
 
-1. **Sales trend** — monthly sales and prior-year comparison
-2. **Category performance** — sales by product category
-3. **Geographic performance** — sales by country and city
-4. **Channel performance** — sales by e-commerce channel
+How does current sales performance compare with the previous year?
 
-A geographic treemap was used instead of the earlier duplicate category visual so the page covers four distinct business dimensions rather than repeating essentially the same ranking twice.
+Which product categories generate the most sales?
 
-## Data Model
+Which countries and cities contribute most to sales?
 
-The workbook uses a star-schema practice model with a central sales fact table and supporting dimensions.
+Which sales channels are driving revenue?
 
-### Fact table
-- Sales / transaction-level data
-- Order ID
-- Customer key
-- Product key
-- Channel key
-- Promotion key
-- Order date
-- Sales and cost measures
+💡 Executive KPI Snapshot
 
-### Dimensions
-- **Date**
-- **Customer**
-- **Product**
-- **Channel**
-- **Promotion**
+KPI
 
-This structure supports reusable DAX measures and consistent filtering across the report.
+Result
 
-## DAX
+Total Sales
 
-Core measures used in the report include:
+€3.81M
 
-```DAX
+Total Profit
+
+€1.50M
+
+Total Orders
+
+10K
+
+YoY Growth
+
++49%
+
+🔎 Key Insights
+
+🏆 Tennis leads category sales
+
+Tennis is the strongest category at approximately €0.57M, followed by Fitness (€0.55M) and Hiking & Camping (€0.53M).
+
+What this means: these categories are important revenue drivers and should be monitored closely for assortment, inventory availability, pricing, and promotional opportunities.
+
+🛒 Online is the dominant channel
+
+Online contributes approximately €1.71M, followed by Mobile App (€0.96M) and Click & Collect (€0.77M).
+
+What this means: digital commerce is the primary revenue engine in the dataset, making the online customer journey an important area for optimization.
+
+🌍 France is the strongest market
+
+France generates approximately €0.97M, followed by Spain (€0.62M) and Germany (€0.59M).
+
+What this means: France is the strongest market in the dataset, while Spain and Germany provide additional opportunities for regional growth analysis.
+
+📈 Sales are growing year over year
+
+The monthly trend compares current sales with the previous year, with overall Sales YoY Growth of +49%.
+
+What this means: the business is showing strong year-over-year momentum, while the monthly comparison helps identify changes in seasonal performance.
+
+🚀 Business Recommendations
+
+1. Prioritize high-performing categories
+
+Focus on Tennis, Fitness, and Hiking & Camping when reviewing:
+
+Inventory availability
+
+Product assortment
+
+Pricing
+
+Promotional campaigns
+
+2. Continue investing in digital channels
+
+Online is the largest revenue contributor. The next analytical step should investigate the drivers behind this performance, including:
+
+Conversion rate
+
+Average order value
+
+Customer acquisition
+
+Mobile vs. desktop behavior
+
+Checkout abandonment
+
+3. Evaluate channel profitability
+
+Revenue leadership does not automatically mean profitability leadership.
+
+A deeper channel analysis should compare:
+
+Sales → Profit → Profit Margin → Orders
+
+This would identify which channels create the most valuable revenue rather than simply the most revenue.
+
+4. Investigate geographic opportunities
+
+France is the strongest market, with Spain and Germany also contributing significantly.
+
+Further analysis could compare:
+
+Sales per customer
+
+Profit margin by country
+
+Average order value
+
+Customer retention
+
+Category preferences by market
+
+🎨 Dashboard Design
+
+The final dashboard uses four complementary analytical views:
+
+Sales Trend — monthly sales performance and previous-year comparison
+
+Category Performance — sales contribution by product category
+
+Geographic Performance — sales distribution across countries and cities using a treemap
+
+Channel Performance — revenue contribution by e-commerce channel
+
+Each visual was selected to answer a distinct business question. An earlier version contained two similar category-ranking visuals; the final design replaced the duplicate view with geographic analysis to improve analytical coverage.
+
+🧩 Data Model
+
+The project uses a star-schema data model with tbl_Sales as the central fact table and supporting dimension tables.
+
+                         Date
+                          │
+                          │
+Customer ──────────── tbl_Sales ──────────── tbl_Product
+                          │
+                          │
+                       Channel
+                          │
+                          │
+                    tbl_Promotion
+
+Fact Table — tbl_Sales
+
+Transaction-level information including:
+
+Order ID
+
+Customer Key
+
+Product Key
+
+Channel Key
+
+Promotion Key
+
+Order Date
+
+Quantity
+
+Unit Price
+
+Net Sales
+
+Profit
+
+Dimension Tables
+
+Date
+
+Customer
+
+tbl_Product
+
+Channel
+
+tbl_Promotion
+
+The star schema supports consistent filtering, reusable DAX measures, and time-intelligence analysis across the report.
+
+🧠 DAX Analysis
+
+Total Sales
+
 Total Sales =
 SUM(tbl_Sales[NetSales])
-```
 
-```DAX
+Total Orders
+
 Total Orders =
 DISTINCTCOUNT(tbl_Sales[OrderID])
-```
 
-```DAX
+Sales LY
+
 Sales LY =
 CALCULATE(
     [Total Sales],
     SAMEPERIODLASTYEAR('Date'[Date])
 )
-```
 
-```DAX
+Sales YoY %
+
 Sales YoY % =
 DIVIDE(
     [Total Sales] - [Sales LY],
     [Sales LY]
 )
-```
 
-> The exact table/column names should be checked against the included PBIX if the model is reused in another file.
+Sales % of Total
 
-## Tools & Skills
+Sales % of Total =
+DIVIDE(
+    [Total Sales],
+    CALCULATE(
+        [Total Sales],
+        REMOVEFILTERS(Channel)
+    )
+)
 
-**Tools**
-- Power BI
-- DAX
-- Excel
+High Value Product Sales
 
-**Skills demonstrated**
-- Star-schema data modeling
-- Data preparation
-- KPI development
-- DAX measures
-- Time-intelligence calculations
-- Year-over-year analysis
-- Product/category analysis
-- Geographic analysis
-- Channel analysis
-- Dashboard UX and visual storytelling
+High Value Product Sales =
+CALCULATE(
+    [Total Sales],
+    FILTER(
+        tbl_Sales,
+        tbl_Sales[UnitPrice] > 100
+    )
+)
 
-## Repository Contents
+🛠️ Tools & Skills
 
-```text
+Tools
+
+Power BI Desktop
+
+DAX
+
+Microsoft Excel
+
+Skills Demonstrated
+
+Data preparation
+
+Star-schema data modeling
+
+Fact and dimension table design
+
+Relationship management
+
+KPI development
+
+DAX measure development
+
+Time intelligence
+
+Year-over-year analysis
+
+Product and category analysis
+
+Geographic analysis
+
+Channel analysis
+
+Dashboard UX
+
+Data storytelling
+
+Business recommendations
+
+🔄 Project Workflow
+
+Structured Data
+      ↓
+Data Preparation
+      ↓
+Star-Schema Model
+      ↓
+Relationships
+      ↓
+DAX Measures
+      ↓
+KPI Development
+      ↓
+Visual Analysis
+      ↓
+Executive Dashboard
+      ↓
+Business Insights
+      ↓
+Recommendations
+
+📦 Repository Contents
+
 decathlon-ecommerce-performance/
 │
 ├── README.md
@@ -147,27 +330,48 @@ decathlon-ecommerce-performance/
 ├── data/
 │   └── Decathlon_PL300_StarSchema_Practice.xlsx
 │
-└── screenshots/
-    └── dashboard.png
-```
+├── screenshots/
+│   └── dashboard.png
+│
+└── docs/
+    ├── dax-measures.md
+    ├── data-model.md
+    ├── business-insights.md
+    └── project-story.md
 
-## How to Use
+▶️ How to Use
 
-1. Download or clone the repository.
-2. Open `powerbi/Decathlon_Ecommerce_Performance.pbix` in Power BI Desktop.
-3. Review the model, measures, relationships, and report page.
-4. If the source workbook is moved, update the Power BI data-source path.
+Download or clone the repository.
 
-## Notes
+Open powerbi/Decathlon_Ecommerce_Performance.pbix in Power BI Desktop.
 
-This is a portfolio/practice analytics project. The dashboard is intended to demonstrate BI workflow, data modeling, DAX, and business storytelling rather than represent Decathlon's actual public financial reporting.
+Review the dashboard and report interactions.
 
-## Author
+Open Model view to inspect the star-schema relationships.
 
+Open Data view to explore the underlying tables.
 
-Semehar Hailu Business Intelligence Engineer & Data Scientist
+Open the Modeling pane to review the DAX measures.
 
-https://www.linkedin.com/in/semehar-mebrahtu-hailu-1a3055193/ • GitHub • semeharhailu@gmail.com
-**Data Analytics Portfolio Project**
+If the Excel source file is moved, update the source path in Power BI.
 
-Power BI • DAX • Data Modeling • Business Intelligence
+📚 What This Project Demonstrates
+
+This project demonstrates my ability to turn structured business data into an executive BI solution.
+
+The focus is not simply on creating visuals, but on connecting:
+
+Data → Model → Measures → Analysis → Insights → Decisions
+
+⚠️ Data Note
+
+This is a portfolio/practice analytics project created for learning and demonstration purposes.
+
+The dataset and results should not be interpreted as Decathlon's actual public financial reporting or internal company data.
+
+👤 Author
+
+Semehar Hailu
+Business Intelligence Engineer & Data Scientist
+
+LinkedIn • GitHub • semeharhailu@gmail.com
