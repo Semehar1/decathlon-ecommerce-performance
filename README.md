@@ -21,7 +21,7 @@ The dashboard is designed to move from **what happened → where it happened →
 
 ## 📊 Dashboard
 
-!screenshots/dashboard.png
+![Decathlon E-Commerce Performance Dashboard](dashboard.png)
 
 ---
 
