@@ -167,7 +167,7 @@ This is a portfolio/practice analytics project. The dashboard is intended to dem
 
 Semehar Hailu Business Intelligence Engineer & Data Scientist
 
-LinkedIn • GitHub • semeharhailu@gmail.com
+https://www.linkedin.com/in/semehar-mebrahtu-hailu-1a3055193/ • GitHub • semeharhailu@gmail.com
 **Data Analytics Portfolio Project**
 
 Power BI • DAX • Data Modeling • Business Intelligence
